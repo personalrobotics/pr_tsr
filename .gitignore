@@ -1,0 +1,34 @@
+*~
+\#*
+TAGS
+CATKIN_IGNORE
+.Trash-*
+
+# build
+build/
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+
+# VIM
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+tags
+
+# Emacs
+\#*\#
+.\#*
+auto-save-list
+/auto/
+dist/
+flycheck_*.el
+.projectile
+.dir-locals.el
+
+*.sublime-workspace
