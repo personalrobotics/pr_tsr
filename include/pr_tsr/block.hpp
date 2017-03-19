@@ -1,5 +1,5 @@
-#ifndef PR_TSR_FUZE_HPP
-#define PR_TSR_FUZE_HPP
+#ifndef PR_TSR_BLOCK_HPP
+#define PR_TSR_BLOCK_HPP
 
 #include <Eigen/Core>
 #include <aikido/constraint/TSR.hpp>
@@ -7,19 +7,19 @@
 
 namespace pr_tsr
 {
-aikido::constraint::TSR getDefaultFuzeTSR()
+aikido::constraint::TSR getDefaultBlockTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::TSR tsr;
 
-  //Transform w.r.t root
+  // Transform w.r.t root
   tsr.mT0_w = Eigen::Isometry3d::Identity();
 
-  //Transform between end effector and w
-  double fuze_height = 0.216; 
-  double fuze_radius = 0.05;
+  // Transform between end effector and w
+  double block_height = 0.216; 
+  double block_width = 0.05;
   Isometry3d Tw_e = tsr.mT0_w;
-  Tw_e.translation() = Eigen::Vector3d{-fuze_radius,0,fuze_height/2.0};
+  Tw_e.translation() = Eigen::Vector3d{-block_width, 0, block_height/2.0};
   tsr.mTw_e = Tw_e;
 
   // Rotation around fuze
@@ -32,4 +32,4 @@ aikido::constraint::TSR getDefaultFuzeTSR()
 
 }
 }
-#endif // PR_TSR_FUZE_HPP
+#endif // PR_TSR_BLOCK_HPP
