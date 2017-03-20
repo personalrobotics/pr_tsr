@@ -16,13 +16,12 @@ aikido::constraint::TSR getDefaultBlockTSR()
   tsr.mT0_w = Eigen::Isometry3d::Identity();
 
   // Transform between end effector and w
-  double block_height = 0.216; 
-  double block_width = 0.05;
+  double vertical_offset = 0.01;
   Isometry3d Tw_e = tsr.mT0_w;
-  Tw_e.translation() = Eigen::Vector3d{-block_width, 0, block_height/2.0};
+  Tw_e.translation() = Eigen::Vector3d{0, 0, vertical_offset};
   tsr.mTw_e = Tw_e;
 
-  // Rotation around fuze
+  // Rotation around object
   Eigen::MatrixXd Bw = Eigen::Matrix<double, 6, 2>::Zero();
   Bw(5,0) = -M_PI;
   Bw(5,1) = M_PI;

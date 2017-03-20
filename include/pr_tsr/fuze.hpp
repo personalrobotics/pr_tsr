@@ -19,13 +19,16 @@ aikido::constraint::TSR getDefaultFuzeTSR()
   double fuze_height = 0.216; 
   double fuze_radius = 0.05;
   Isometry3d Tw_e = tsr.mT0_w;
-  Tw_e.translation() = Eigen::Vector3d{-fuze_radius,0,fuze_height/2.0};
+  Tw_e.translation() = Eigen::Vector3d{fuze_radius, 0, fuze_height/2.0};
   tsr.mTw_e = Tw_e;
 
-  // Rotation around fuze
+  // Rotation around object
   Eigen::MatrixXd Bw = Eigen::Matrix<double, 6, 2>::Zero();
-  Bw(5,0) = -M_PI;
-  Bw(5,1) = M_PI;
+  double vertical_tolerance = 0.02;
+  Bw(2, 0) = -vertical_tolerance;
+  Bw(2, 1) = vertical_tolerance;
+  Bw(5, 0) = -M_PI;
+  Bw(5, 1) = M_PI;
   tsr.mBw = Bw;
 
   return tsr;
