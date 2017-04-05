@@ -7,27 +7,25 @@
 
 namespace pr_tsr
 {
+
+/// This creates a TSR that allows you to sample poses on the tray.
+/// The samples from this TSR should be used to find points for
+/// object placement. They are directly on the tray, and thus not
+/// suitable as an end-effector pose. Grasp specific calculations are
+/// necessary to find a suitable end-effector pose.
+///
+/// @param robot The robot performing the grasp
+/// @param tray The tray to sample poses on
+/// @param manip The manipulator to perform the grasp, if None
+///        the active manipulator on the robot is used
+/// @param padding The amount of space around the edge to exclude
+///        from sampling. If using this to place an object, this would
+///        be the maximum radius of the object
+/// @param handle_padding If true add extra padding along the edges
+///        of the tray that have the handles to prevent choosing a pose
+///        too near the handle of the tray
 aikido::constraint::TSR getDefaultBlockBinTSR()
 {
-  /*
-    This creates a TSR that allows you to sample poses on the tray.
-    The samples from this TSR should be used to find points for
-    object placement. They are directly on the tray, and thus not
-    suitable as an end-effector pose. Grasp specific calculations are
-    necessary to find a suitable end-effector pose.
-
-    @param robot The robot performing the grasp
-    @param tray The tray to sample poses on
-    @param manip The manipulator to perform the grasp, if None
-       the active manipulator on the robot is used
-    @param padding The amount of space around the edge to exclude
-       from sampling. If using this to place an object, this would
-       be the maximum radius of the object
-    @param handle_padding If true add extra padding along the edges
-       of the tray that have the handles to prevent choosing a pose
-       too near the handle of the tray
-  */
-
   using Eigen::Isometry3d;
   aikido::constraint::TSR tsr;
 

@@ -28,7 +28,6 @@ aikido::constraint::TSR getDefaultBlockTSR()
   tsr.mBw = Bw;
 
   return tsr;
-
 }
 }
 #endif // PR_TSR_BLOCK_HPP
