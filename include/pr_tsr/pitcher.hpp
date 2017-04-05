@@ -43,8 +43,7 @@ aikido::constraint::TSR getDefaultPitcherTSR()
   Tw_e.linear() = ee_rot;
 
   double pitcher_extents[] = {0.07877473, 0.06568845, 0.11882638};
-  double push_distance = 0.1;
-  double offset = pitcher_extents[0] + 0.18 + push_distance;
+  double offset = pitcher_extents[0];
   Tw_e(0, 3) = -offset * Tw_e(0, 2);
   Tw_e(1, 3) = -offset * Tw_e(1, 2);
   Tw_e(2, 3) = 0.45 * pitcher_extents[2];

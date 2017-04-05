@@ -32,12 +32,13 @@ aikido::constraint::TSR getDefaultPopTartsTSR()
 
   // Transform between end effector and w
   Isometry3d Tw_e = tsr.mT0_w;
+
+  // Top face
   Tw_e.translation() = Eigen::Vector3d{0, 0, height};
-  // The frame is set on the table such that the y-axis is normal to the table surface
   Eigen::Matrix3d rot;
   rot << 0, 1, 0,
         1, 0, 0,
-        0, 0, -1;
+        0, 0, 1;
   Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
@@ -45,11 +46,12 @@ aikido::constraint::TSR getDefaultPopTartsTSR()
   Eigen::MatrixXd Bw = Eigen::Matrix<double, 6, 2>::Zero();
   double padding = 0.0;
   // move along x and z directios to get any point on table
-  Bw(0, 0) = -0.93 + padding;   Bw(0, 1) = 0.93 - padding;
-  Bw(1, 0) = -0.38 + padding;   Bw(1, 1) = 0.38 - padding;
-  // allow any rotation around y - which is the axis normal to the table top
-  Bw(5, 0) = -M_PI;   Bw(5, 1) = M_PI;
+  Bw(1, 0) = -lateral_tolerance;   Bw(1, 1) = lateral_tolerance;
   tsr.mBw = Bw;
+
+  // TODO:
+  // generate multiple TSRs for multiple faces
+  // add wrapper to hand over an array of TSR
 
   return tsr;
 
