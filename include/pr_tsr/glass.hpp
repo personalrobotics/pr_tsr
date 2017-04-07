@@ -20,6 +20,11 @@ aikido::constraint::TSR getDefaultGlassTSR()
   double glass_radius = 0.045;
   Isometry3d Tw_e = tsr.mT0_w;
   Tw_e.translation() = Eigen::Vector3d{glass_radius, 0, glass_height/2.0};
+  Eigen::Matrix3d rot;
+  rot << 0, 0, 1,
+        1, 0, 0,
+        0, 1, 0;
+  Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
   // Rotation around object

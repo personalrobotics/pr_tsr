@@ -20,6 +20,11 @@ aikido::constraint::TSR getDefaultFuzeTSR()
   double fuze_radius = 0.05;
   Isometry3d Tw_e = tsr.mT0_w;
   Tw_e.translation() = Eigen::Vector3d{fuze_radius, 0, fuze_height/2.0};
+  Eigen::Matrix3d rot;
+  rot << 0, 0, 1,
+        1, 0, 0,
+        0, 1, 0;
+  Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
   // Rotation around object
