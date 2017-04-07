@@ -22,8 +22,12 @@ include_directories(${aikido_INCLUDE_DIRS})
 #
 
 add_library(pr_tsr STATIC
-  include/pr_tsr/valve.hpp
-  include/pr_tsr/fuze.hpp)
+  include/pr_tsr/block_bin.hpp
+  include/pr_tsr/block.hpp
+  include/pr_tsr/fuze.hpp
+  include/pr_tsr/glass.hpp
+  include/pr_tsr/table.hpp
+  include/pr_tsr/valve.hpp)
 set_target_properties(pr_tsr PROPERTIES LINKER_LANGUAGE CXX)
 
 target_include_directories(pr_tsr PUBLIC
