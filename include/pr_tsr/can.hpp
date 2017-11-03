@@ -33,25 +33,10 @@ aikido::constraint::TSR getDefaultCanTSR()
   double vertical_tolerance = 0.02;
   Bw(2, 0) = -vertical_tolerance;
   Bw(2, 1) = vertical_tolerance;
-
-  // any side
-  // Bw(5, 0) = -M_PI;
-  // Bw(5, 1) = M_PI;
-
-  // right side
-  // Bw(5, 0) = -M_PI;
-  // Bw(5, 1) = 0;
-
-  // HERB side
-  // Bw(5, 0) = M_PI/2;
-  // Bw(5, 1) = 3*M_PI/2;
-
-  // HERB right side
-  Bw(5, 0) = M_PI;
-  Bw(5, 1) = 3*M_PI/2;
+  Bw(5, 0) = -M_PI;
+  Bw(5, 1) = M_PI;
   tsr.mBw = Bw;
 
-  // TODO: bias this so that we only sample regions that are easy for HERB to reach by pushing
   return tsr;
 
 }
