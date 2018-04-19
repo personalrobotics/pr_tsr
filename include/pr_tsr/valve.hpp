@@ -2,15 +2,15 @@
 #define PR_TSR_VALVE_HPP
 
 #include <Eigen/Core>
-#include <aikido/constraint/TSR.hpp>
+#include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
 namespace pr_tsr
 {
-aikido::constraint::TSR getDefaultValveTSR()
+aikido::constraint::dart::TSR getDefaultValveTSR()
 {
   using Eigen::Isometry3d;
-  aikido::constraint::TSR tsr;
+  aikido::constraint::dart::TSR tsr;
 
   // transform of the wheel joint from the valve root body
   // copied out of valve_turning/valve.hpp

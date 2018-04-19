@@ -2,7 +2,7 @@
 #define PR_TSR_BLOCK_BIN_HPP
 
 #include <Eigen/Core>
-#include <aikido/constraint/TSR.hpp>
+#include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
 namespace pr_tsr
@@ -24,10 +24,10 @@ namespace pr_tsr
 /// @param handle_padding If true add extra padding along the edges
 ///        of the tray that have the handles to prevent choosing a pose
 ///        too near the handle of the tray
-aikido::constraint::TSR getDefaultBlockBinTSR()
+aikido::constraint::dart::TSR getDefaultBlockBinTSR()
 {
   using Eigen::Isometry3d;
-  aikido::constraint::TSR tsr;
+  aikido::constraint::dart::TSR tsr;
 
   // Transform w.r.t root
   tsr.mT0_w = Eigen::Isometry3d::Identity();
