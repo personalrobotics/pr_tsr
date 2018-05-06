@@ -7,7 +7,7 @@
   <author email="cliddick@cmu.edu">Clint Liddick</author>
   <license>UNRELEASED</license>
   <depend>aikido</depend>
-  <depend>dart</depend>
+  <depend>dartsim</depend>
   <depend>eigen</depend>
   <!-- Workaround to build DART with optional features enabled. -->
   <depend>nlopt</depend>
