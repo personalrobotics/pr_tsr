@@ -5,8 +5,7 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
+namespace pr_tsr {
 aikido::constraint::dart::TSR getDefaultGlassTSR()
 {
   using Eigen::Isometry3d;
@@ -19,11 +18,9 @@ aikido::constraint::dart::TSR getDefaultGlassTSR()
   double glass_height = 0.16;
   double glass_radius = 0.045;
   Isometry3d Tw_e = tsr.mT0_w;
-  Tw_e.translation() = Eigen::Vector3d{glass_radius, 0, glass_height/2.0};
+  Tw_e.translation() = Eigen::Vector3d{glass_radius, 0, glass_height / 2.0};
   Eigen::Matrix3d rot;
-  rot << 0, 0, 1,
-        1, 0, 0,
-        0, 1, 0;
+  rot << 0, 0, 1, 1, 0, 0, 0, 1, 0;
   Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
@@ -37,7 +34,6 @@ aikido::constraint::dart::TSR getDefaultGlassTSR()
   tsr.mBw = Bw;
 
   return tsr;
-
 }
 }
 #endif // PR_TSR_GLASS_HPP

@@ -5,8 +5,7 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
+namespace pr_tsr {
 aikido::constraint::dart::TSR getDefaultCanTSR()
 {
   using Eigen::Isometry3d;
@@ -20,11 +19,10 @@ aikido::constraint::dart::TSR getDefaultCanTSR()
   double can_radius = 0.033;
   double push_distance = 0.05;
   Isometry3d Tw_e = tsr.mT0_w;
-  Tw_e.translation() = Eigen::Vector3d{can_radius+push_distance, 0, can_height/2.0};
+  Tw_e.translation()
+      = Eigen::Vector3d{can_radius + push_distance, 0, can_height / 2.0};
   Eigen::Matrix3d rot;
-  rot << 0, 0, 1,
-        1, 0, 0,
-        0, 1, 0;
+  rot << 0, 0, 1, 1, 0, 0, 0, 1, 0;
   Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
@@ -38,7 +36,6 @@ aikido::constraint::dart::TSR getDefaultCanTSR()
   tsr.mBw = Bw;
 
   return tsr;
-
 }
 }
 #endif // PR_TSR_CAN_HPP

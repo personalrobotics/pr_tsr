@@ -5,8 +5,7 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
+namespace pr_tsr {
 aikido::constraint::dart::TSR getDefaultValveTSR()
 {
   using Eigen::Isometry3d;
@@ -15,8 +14,8 @@ aikido::constraint::dart::TSR getDefaultValveTSR()
   // transform of the wheel joint from the valve root body
   // copied out of valve_turning/valve.hpp
   Eigen::Isometry3d wheel_jnt_tf{Eigen::Isometry3d::Identity()};
-  wheel_jnt_tf.linear() =
-      dart::math::eulerXYZToMatrix(Eigen::Vector3d(M_PI / 2, 0, 0));
+  wheel_jnt_tf.linear()
+      = dart::math::eulerXYZToMatrix(Eigen::Vector3d(M_PI / 2, 0, 0));
   wheel_jnt_tf.translation() = Eigen::Vector3d{.095, 0, .1};
 
   // transform to a more useful w frame
@@ -37,4 +36,4 @@ aikido::constraint::dart::TSR getDefaultValveTSR()
   return tsr;
 };
 }
-#endif  // PR_TSR_VALVE_HPP
+#endif // PR_TSR_VALVE_HPP

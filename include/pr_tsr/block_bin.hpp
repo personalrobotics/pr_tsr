@@ -5,8 +5,7 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
+namespace pr_tsr {
 
 /// This creates a TSR that allows you to sample poses on the tray.
 /// The samples from this TSR should be used to find points for
@@ -44,15 +43,18 @@ aikido::constraint::dart::TSR getDefaultBlockBinTSR()
   double xdim = std::max(0.085 - padding, 0.0);
   double ydim = std::max(0.135 - padding, 0.0);
   // move along x, y directions to get any point on tray
-  Bw(0, 0) = -xdim;   Bw(0, 1) = xdim;
-  Bw(1, 0) = -ydim;   Bw(1, 1) = ydim;
-  Bw(2, 0) = -0.02;   Bw(2, 1) = 0.04;  // vertical movement
+  Bw(0, 0) = -xdim;
+  Bw(0, 1) = xdim;
+  Bw(1, 0) = -ydim;
+  Bw(1, 1) = ydim;
+  Bw(2, 0) = -0.02;
+  Bw(2, 1) = 0.04; // vertical movement
   // allow any rotation around z - which is the axis normal to the tray top
-  Bw(5, 0) = -M_PI;   Bw(5, 1) = M_PI;
+  Bw(5, 0) = -M_PI;
+  Bw(5, 1) = M_PI;
   tsr.mBw = Bw;
 
   return tsr;
-
 }
 }
 #endif // PR_TSR_BLOCK_BIN_HPP

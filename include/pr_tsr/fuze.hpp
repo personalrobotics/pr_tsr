@@ -5,25 +5,22 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
+namespace pr_tsr {
 aikido::constraint::dart::TSR getDefaultFuzeTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::dart::TSR tsr;
 
-  //Transform w.r.t root
+  // Transform w.r.t root
   tsr.mT0_w = Eigen::Isometry3d::Identity();
 
-  //Transform between end effector and w
-  double fuze_height = 0.216; 
+  // Transform between end effector and w
+  double fuze_height = 0.216;
   double fuze_radius = 0.05;
   Isometry3d Tw_e = tsr.mT0_w;
-  Tw_e.translation() = Eigen::Vector3d{fuze_radius, 0, fuze_height/2.0};
+  Tw_e.translation() = Eigen::Vector3d{fuze_radius, 0, fuze_height / 2.0};
   Eigen::Matrix3d rot;
-  rot << 0, 0, 1,
-        1, 0, 0,
-        0, 1, 0;
+  rot << 0, 0, 1, 1, 0, 0, 0, 1, 0;
   Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
@@ -37,7 +34,6 @@ aikido::constraint::dart::TSR getDefaultFuzeTSR()
   tsr.mBw = Bw;
 
   return tsr;
-
 }
 }
 #endif // PR_TSR_FUZE_HPP
