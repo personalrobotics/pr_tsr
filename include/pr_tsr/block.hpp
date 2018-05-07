@@ -5,8 +5,7 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
+namespace pr_tsr {
 aikido::constraint::dart::TSR getDefaultBlockTSR()
 {
   using Eigen::Isometry3d;
@@ -23,8 +22,8 @@ aikido::constraint::dart::TSR getDefaultBlockTSR()
 
   // Rotation around object
   Eigen::MatrixXd Bw = Eigen::Matrix<double, 6, 2>::Zero();
-  Bw(5,0) = -M_PI;
-  Bw(5,1) = M_PI;
+  Bw(5, 0) = -M_PI;
+  Bw(5, 1) = M_PI;
   tsr.mBw = Bw;
 
   return tsr;
