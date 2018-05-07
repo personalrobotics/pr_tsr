@@ -5,10 +5,10 @@
 #include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
-namespace pr_tsr
-{
-// The default plate tsr allows you to view the whole 
-// plate from a point above
+namespace pr_tsr {
+
+/// The default plate tsr allows you to view the whole 
+/// plate from a point above
 aikido::constraint::dart::TSR getDefaultPlateTSR()
 {
   using Eigen::Isometry3d;
@@ -29,12 +29,6 @@ aikido::constraint::dart::TSR getDefaultPlateTSR()
 
   // Rotation around object
   Eigen::MatrixXd Bw = Eigen::Matrix<double, 6, 2>::Zero();
-  double vertical_tolerance_low = 0.05;
-  double vertical_tolerance_high = 0.06;
-  Bw(1, 0) = -view_radius;
-  Bw(1, 1) = view_radius;
-  Bw(2, 0) = vertical_tolerance_low;
-  Bw(2, 1) = vertical_tolerance_high;
   Bw(5, 0) = -M_PI;
   Bw(5, 1) = M_PI;
   tsr.mBw = Bw;
