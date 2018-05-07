@@ -22,7 +22,11 @@ aikido::constraint::dart::TSR getDefaultCanTSR()
   Tw_e.translation()
       = Eigen::Vector3d{can_radius + push_distance, 0, can_height / 2.0};
   Eigen::Matrix3d rot;
-  rot << 0, 0, 1, 1, 0, 0, 0, 1, 0;
+  // clang-format off
+  rot << 0, 0, 1,
+         1, 0, 0,
+         0, 1, 0;
+  // clang-format on
   Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 

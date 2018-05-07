@@ -30,7 +30,11 @@ aikido::constraint::dart::TSR getDefaultTableTSR()
   // The frame is set on the table such that the y-axis is normal to the table
   // surface
   Eigen::Matrix3d rot;
-  rot << 1, 0, 0, 0, 1, 0, 0, 0, 1;
+  // clang-format off
+  rot << 1, 0, 0,
+         0, 1, 0,
+         0, 0, 1;
+  // clang-format on
   Tw_e.linear() = rot;
   tsr.mTw_e = Tw_e;
 
