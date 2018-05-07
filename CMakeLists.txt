@@ -68,7 +68,7 @@ install(FILES "package.xml"
 
 find_program(
   CLANG_FORMAT_EXECUTABLE
-  NAMES clang-format clang-format-3.9 clang-format-3.8
+  NAMES clang-format clang-format-3.8
 )
 
 if(CLANG_FORMAT_EXECUTABLE)
