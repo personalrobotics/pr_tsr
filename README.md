@@ -1,4 +1,4 @@
-## The Personal Robotics Task Space Region (TSR) Collection
+## The Personal Robotics Task Space Region (TSR) Collection [![Build Status](https://travis-ci.com/personalrobotics/pr_tsr.svg?token=1MmAniN9fkMcwpRUTdFq&branch=master)](https://travis-ci.com/personalrobotics/pr_tsr)
 
 This header-only library contains predefined [TSRs](https://dl.acm.org/citation.cfm?id=2046797) ([alt](https://www.ri.cmu.edu/publication_view.html?pub_id=6867)) for objects that may be manipulated with the [Aikido](https://github.com/personalrobotics/aikido) library.
 
