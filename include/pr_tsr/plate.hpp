@@ -7,7 +7,7 @@
 
 namespace pr_tsr {
 
-/// The default plate tsr allows you to view the whole 
+/// The default plate tsr allows you to view the whole
 /// plate from a point above
 aikido::constraint::dart::TSR getDefaultPlateTSR()
 {
