@@ -2,7 +2,7 @@
 #define PR_TSR_TABLE_HPP
 
 #include <Eigen/Core>
-#include <aikido/constraint/TSR.hpp>
+#include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
 namespace pr_tsr
@@ -17,10 +17,10 @@ namespace pr_tsr
 /// placement. They are directly on the table, and thus not suitable as an
 /// end-effector pose. Grasp specific calculations are necessary to find a
 /// suitable end-effector pose.
-aikido::constraint::TSR getDefaultTableTSR()
+aikido::constraint::dart::TSR getDefaultTableTSR()
 {
   using Eigen::Isometry3d;
-  aikido::constraint::TSR tsr;
+  aikido::constraint::dart::TSR tsr;
 
   // Transform w.r.t root
   tsr.mT0_w = Eigen::Isometry3d::Identity();

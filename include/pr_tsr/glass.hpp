@@ -2,15 +2,15 @@
 #define PR_TSR_GLASS_HPP
 
 #include <Eigen/Core>
-#include <aikido/constraint/TSR.hpp>
+#include <aikido/constraint/dart/TSR.hpp>
 #include <dart/math/math.hpp>
 
 namespace pr_tsr
 {
-aikido::constraint::TSR getDefaultGlassTSR()
+aikido::constraint::dart::TSR getDefaultGlassTSR()
 {
   using Eigen::Isometry3d;
-  aikido::constraint::TSR tsr;
+  aikido::constraint::dart::TSR tsr;
 
   // Transform w.r.t root
   tsr.mT0_w = Eigen::Isometry3d::Identity();
