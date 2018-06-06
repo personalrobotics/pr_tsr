@@ -16,9 +16,9 @@ aikido::constraint::TSR getDefaultCanTSR()
   tsr.mT0_w = Eigen::Isometry3d::Identity();
 
   // Transform between end effector and w
-  double can_height = 0.123;
+  double can_height = 0.114;
   double can_radius = 0.033;
-  double push_distance = 0.05;
+  double push_distance = 0.08;
   Isometry3d Tw_e = tsr.mT0_w;
   Tw_e.translation() = Eigen::Vector3d{can_radius+push_distance, 0, can_height/2.0};
   Eigen::Matrix3d rot;
