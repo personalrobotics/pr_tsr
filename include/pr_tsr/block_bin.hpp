@@ -23,7 +23,7 @@ namespace pr_tsr {
 /// @param handle_padding If true add extra padding along the edges
 ///        of the tray that have the handles to prevent choosing a pose
 ///        too near the handle of the tray
-aikido::constraint::dart::TSR getDefaultBlockBinTSR()
+inline aikido::constraint::dart::TSR getDefaultBlockBinTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::dart::TSR tsr;

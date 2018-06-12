@@ -16,7 +16,7 @@ namespace pr_tsr {
 /// placement. They are directly on the table, and thus not suitable as an
 /// end-effector pose. Grasp specific calculations are necessary to find a
 /// suitable end-effector pose.
-aikido::constraint::dart::TSR getDefaultTableTSR()
+inline aikido::constraint::dart::TSR getDefaultTableTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::dart::TSR tsr;
