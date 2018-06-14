@@ -18,10 +18,7 @@ inline aikido::constraint::dart::TSR getDefaultPlateTSR()
   tsr.mT0_w = Eigen::Isometry3d::Identity();
 
   // Transform between end effector and w
-  double plate_height = 0.005;
-  double plate_radius = 0.125;
   double vertical_offset = 0.15;
-  double view_radius = 0.001;
 
   Isometry3d Tw_e = tsr.mT0_w;
   Tw_e.translation() = Eigen::Vector3d{0, 0, vertical_offset};
