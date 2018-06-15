@@ -9,7 +9,7 @@ namespace pr_tsr {
 
 /// The default plate tsr allows you to view the whole
 /// plate from a point above
-aikido::constraint::dart::TSR getDefaultPlateTSR()
+inline aikido::constraint::dart::TSR getDefaultPlateTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::dart::TSR tsr;

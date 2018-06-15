@@ -6,7 +6,7 @@
 #include <dart/math/math.hpp>
 
 namespace pr_tsr {
-aikido::constraint::dart::TSR getDefaultGlassTSR()
+inline aikido::constraint::dart::TSR getDefaultGlassTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::dart::TSR tsr;

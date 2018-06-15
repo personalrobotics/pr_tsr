@@ -6,7 +6,7 @@
 #include <dart/math/math.hpp>
 
 namespace pr_tsr {
-aikido::constraint::dart::TSR getDefaultValveTSR()
+inline aikido::constraint::dart::TSR getDefaultValveTSR()
 {
   using Eigen::Isometry3d;
   aikido::constraint::dart::TSR tsr;
