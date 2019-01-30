@@ -1,0 +1,120 @@
+#==============================================================================
+#
+# Arguments that will be appended in-order before command line arguments.
+#
+#==============================================================================
+arguments:
+  - "-extra-arg"
+  - "-I/usr/lib/clang/3.6/include"
+
+#==============================================================================
+#
+# Binding
+#
+#==============================================================================
+binding: "pybind11"
+
+#==============================================================================
+#
+# Template
+#
+#==============================================================================
+template:
+  module: !file
+    'templates/module.mstch.cpp'
+  class: !file
+    'templates/class.mstch.cpp'
+  enum: !file
+    'templates/enum.mstch.cpp'
+  function: !file
+    'templates/function.mstch.cpp'
+  variable: !file
+    'templates/variable.mstch.cpp'
+  file:
+    header: |
+      // #include <dartpy/pointers.h>
+      // #include <dartpy/template_registry.h>
+      #include <dart/dart.hpp>
+      #include <dart/collision/bullet/bullet.hpp>
+      // #include <dart/collision/ode/ode.hpp>
+      #include <dart/optimizer/optimizer.hpp>
+      #include <dart/optimizer/nlopt/nlopt.hpp>
+      #include <dart/planning/planning.hpp>
+      #include <dart/utils/utils.hpp>
+      #include <dart/utils/urdf/urdf.hpp>
+      #include <dart/gui/gui.hpp>
+
+      #include <pybind11/pybind11.h>
+      #include <pybind11/eigen.h>
+    precontent:
+      '/* precontent */'
+    postinclude:
+      '/* postinclude */'
+    footer:
+      '/* footer */'
+    # TODO: Put this at the bottom of the module:
+    # dart::python::JointTemplateRegistry::register_default_types();
+    # dart::python::JointAndNodeTemplateRegistry::register_default_types();
+  main:
+    header: |
+      #include <vector>
+      // #include <dartpy/pointers.h>
+      // #include <dartpy/collections.h>
+      // #include <dartpy/util.h>
+      #include <dart/dart.hpp>
+      #include <dart/collision/bullet/bullet.hpp>
+      // #include <dart/collision/ode/ode.hpp>
+      #include <dart/optimizer/optimizer.hpp>
+      #include <dart/optimizer/nlopt/nlopt.hpp>
+      #include <dart/planning/planning.hpp>
+      #include <dart/utils/utils.hpp>
+      #include <dart/utils/urdf/urdf.hpp>
+      #include <dart/gui/gui.hpp>
+
+      #include <pybind11/pybind11.h>
+      #include <pybind11/eigen.h>
+
+      #include <dartpy/eigen_pybind.h>
+      #include <dartpy/eigen_geometry_pybind.h>
+    postinclude:
+      '/* main postinclude */'
+    prebody:
+      '/* main prebody */'
+    precontent:
+      '/* main precontent */'
+    postcontent: |
+      void eigen(pybind11::module& m);
+      eigen(m);
+
+#==============================================================================
+#
+# Namespaces: The C++ namespaces that will be extracted by Chimera
+#
+#==============================================================================
+namespaces:
+  'dart':
+    name: null  # Collapse the 'dart' namespace into its parent.
+  'dart::common::detail': null
+  'dart::math::detail': null
+  'dart::dynamics::detail': null
+
+#==============================================================================
+#
+# Types: Selected types that need special handling.
+#
+#==============================================================================
+types:
+
+  #----------------------------------------------------------------------------
+  # std::
+  #----------------------------------------------------------------------------
+  'const std::string &':
+    return_value_policy: reference_internal
+
+
+  #----------------------------------------------------------------------------
+  # Eigen::
+  #----------------------------------------------------------------------------
+
+  'const Eigen::Vector3d&':
+    return_value_policy: reference_internal
