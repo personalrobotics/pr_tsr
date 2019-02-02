@@ -39,9 +39,18 @@ target_include_directories(pr_tsr PUBLIC
 set_property(TARGET pr_tsr PROPERTY VERSION ${library_VERSION})
 
 target_link_libraries(pr_tsr
-  ${DART_LIBRARIES}
-  ${aikido_LIBRARIES})
+  PUBLIC
+    dart
+    ${aikido_LIBRARIES})
 
+
+#================================================================================
+# Python binding
+#
+option(BUILD_PYTHON "Enable building pr_tsrpy" OFF)
+if(BUILD_PYTHON)
+  add_subdirectory(python)
+endif()
 
 #================================================================================
 # Installation

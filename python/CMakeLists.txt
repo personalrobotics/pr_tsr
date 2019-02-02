@@ -87,7 +87,6 @@ if(chimera_FOUND)
   target_link_libraries("${PROJECT_NAME}_CHIMERA"
     PUBLIC
       ${PYTHON_LIBRARIES}
-      dart
   )
   add_custom_target(binding DEPENDS "${PROJECT_NAME}_CHIMERA_REBUILD")
 else()
@@ -114,6 +113,7 @@ if(EXISTS "${SOURCES_TXT}")
   target_link_libraries("${PROJECT_NAME}"
     PUBLIC
       ${PYTHON_LIBRARIES}
+      pr_tsr
   )
   set_target_properties("${PROJECT_NAME}" PROPERTIES
     PREFIX ""
