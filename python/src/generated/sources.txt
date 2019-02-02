@@ -1,0 +1,10 @@
+_ZN6pr_tsr18getDefaultBlockTSREv.cpp
+_ZN6pr_tsr21getDefaultBlockBinTSREv.cpp
+_ZN6pr_tsr16getDefaultCanTSREv.cpp
+_ZN6pr_tsr21getDefaultFoodItemTSREv.cpp
+_ZN6pr_tsr17getDefaultFuzeTSREv.cpp
+_ZN6pr_tsr18getDefaultGlassTSREv.cpp
+_ZN6pr_tsr18getDefaultPlateTSREv.cpp
+_ZN6pr_tsr18getDefaultTableTSREv.cpp
+_ZN6pr_tsr18getDefaultValveTSREv.cpp
+pr_tsrpy.cpp
