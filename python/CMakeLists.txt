@@ -56,7 +56,7 @@ include_directories(SYSTEM
 # Chimera Settings
 #===================
 
-find_package(chimera REQUIRED)
+find_package(chimera QUIET)
 
 # Check if DART is built with octomap so that it supports VoxelGridShape
 include(CheckCXXSourceCompiles)
