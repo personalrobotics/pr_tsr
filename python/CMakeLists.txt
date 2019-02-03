@@ -87,9 +87,13 @@ if(chimera_FOUND)
   add_chimera_binding(TARGET "${PROJECT_NAME}_CHIMERA"
     MODULE "${PROJECT_NAME}"
     CONFIGURATION "${CHIMERA_CONFIG}"
-    SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/chimera/chimera.cpp"
+    SOURCES "chimera/chimera.cpp"
     DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/src/generated"
     DEBUG EXCLUDE_FROM_ALL
+  )
+  target_include_directories("${PROJECT_NAME}_CHIMERA"
+    PUBLIC
+      ${CMAKE_CURRENT_SOURCE_DIR}
   )
   target_link_libraries("${PROJECT_NAME}_CHIMERA"
     PUBLIC
@@ -116,6 +120,10 @@ if(EXISTS "${SOURCES_TXT}")
   add_library("${PROJECT_NAME}" MODULE
     ${SOURCES_GENERATED}
     src/eigen_geometry_py.cpp
+  )
+  target_include_directories("${PROJECT_NAME}"
+    PUBLIC
+      ${CMAKE_CURRENT_SOURCE_DIR}
   )
   target_link_libraries("${PROJECT_NAME}"
     PUBLIC
