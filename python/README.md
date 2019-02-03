@@ -1,6 +1,6 @@
 # prtsr_py
 
-This folder contains cpp files for generating `pr_tsrpy` using pybind11. All cpp files are generated using [chimera](https://github.com/personalrobotics/chimera.git).
+This folder contains cpp files for generating `pr_tsrpy` using pybind11. All cpp files are generated using [chimera](https://github.com/personalrobotics/chimera).
 
 ## Installation
 Install `python3-dev`
