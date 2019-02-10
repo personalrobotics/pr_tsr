@@ -95,6 +95,11 @@ if(EXISTS "${SOURCES_TXT}")
     ${SOURCES_GENERATED}
     src/eigen_geometry_py.cpp
   )
+  target_include_directories("${PROJECT_NAME}"
+    PUBLIC
+      ${CMAKE_CURRENT_SOURCE_DIR}
+      chimera
+  )
   target_link_libraries("${PROJECT_NAME}"
     PUBLIC
       ${PYTHON_LIBRARIES}
