@@ -1,6 +1,6 @@
 
 
-#include "../../chimera/chimera.hpp"
+#include <chimera/chimera.hpp>
 
 #include <pybind11/pybind11.h>
 

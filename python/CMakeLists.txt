@@ -39,11 +39,13 @@ if(NOT pybind11_FOUND)
   return()
 endif()
 
+find_package(Eigen3 REQUIRED)
+
 include_directories(SYSTEM
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_BINARY_DIR}/include
   ${PYTHON_INCLUDE_DIRS}
-  ${pr_tsrpy_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
 )
 
 include(CheckCXXSourceCompiles)
@@ -64,7 +66,7 @@ if (BUILD_CHIMERA)
     add_chimera_binding(TARGET "${PROJECT_NAME}_CHIMERA"
       MODULE "${PROJECT_NAME}"
       CONFIGURATION "${CHIMERA_CONFIG}"
-      SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/chimera/chimera.hpp"
+      SOURCES "chimera/chimera.hpp"
       DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/src/generated"
       DEBUG EXCLUDE_FROM_ALL
     )
@@ -98,7 +100,6 @@ if(EXISTS "${SOURCES_TXT}")
   target_include_directories("${PROJECT_NAME}"
     PUBLIC
       ${CMAKE_CURRENT_SOURCE_DIR}
-      chimera
   )
   target_link_libraries("${PROJECT_NAME}"
     PUBLIC
