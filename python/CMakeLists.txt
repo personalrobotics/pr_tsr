@@ -39,17 +39,11 @@ if(NOT pybind11_FOUND)
   return()
 endif()
 
-find_package(Eigen3 REQUIRED NO_MODULE)
-if(NOT Eigen3_FOUND)
-  message(STATUS "Eigen3 not found")
-  return()
-endif()
-
 include_directories(SYSTEM
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_BINARY_DIR}/include
   ${PYTHON_INCLUDE_DIRS}
-  ${EIGEN3_INCLUDE_DIRS}
+  ${pr_tsrpy_INCLUDE_DIRS}
 )
 
 include(CheckCXXSourceCompiles)
