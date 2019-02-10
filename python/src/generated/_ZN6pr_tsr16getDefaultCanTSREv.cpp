@@ -1,6 +1,6 @@
 
 
-#include </home/gilwoo/School_Workspace/herbpy_ws/src/pr_tsr/python/chimera/chimera.cpp>
+#include "../../chimera/chimera.cpp"
 
 #include <pybind11/pybind11.h>
 
