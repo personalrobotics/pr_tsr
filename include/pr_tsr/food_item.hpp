@@ -28,5 +28,5 @@ inline aikido::constraint::dart::TSR getDefaultFoodItemTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_FOOD_ITEM_HPP

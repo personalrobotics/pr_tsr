@@ -35,5 +35,5 @@ inline aikido::constraint::dart::TSR getDefaultValveTSR()
 
   return tsr;
 };
-}
+} // namespace pr_tsr
 #endif // PR_TSR_VALVE_HPP

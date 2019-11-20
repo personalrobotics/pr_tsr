@@ -68,7 +68,7 @@ install(FILES "package.xml"
 # Formatting
 #
 
-find_program(CLANG_FORMAT_EXECUTABLE NAMES clang-format)
+find_program(CLANG_FORMAT_EXECUTABLE NAMES clang-format-6.0)
 
 if(CLANG_FORMAT_EXECUTABLE)
   message(STATUS "Found clang-format.")

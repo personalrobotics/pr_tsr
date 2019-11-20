@@ -28,5 +28,5 @@ inline aikido::constraint::dart::TSR getDefaultBlockTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_BLOCK_HPP

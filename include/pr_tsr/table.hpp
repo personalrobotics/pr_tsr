@@ -53,5 +53,5 @@ inline aikido::constraint::dart::TSR getDefaultTableTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_TABLE_HPP

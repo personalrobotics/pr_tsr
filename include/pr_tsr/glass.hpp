@@ -39,5 +39,5 @@ inline aikido::constraint::dart::TSR getDefaultGlassTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_GLASS_HPP
