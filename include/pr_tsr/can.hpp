@@ -41,5 +41,5 @@ inline aikido::constraint::dart::TSR getDefaultCanTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_CAN_HPP

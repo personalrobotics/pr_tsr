@@ -39,5 +39,5 @@ inline aikido::constraint::dart::TSR getDefaultFuzeTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_FUZE_HPP

@@ -32,5 +32,5 @@ inline aikido::constraint::dart::TSR getDefaultPlateTSR()
 
   return tsr;
 }
-}
+} // namespace pr_tsr
 #endif // PR_TSR_PLATE_HPP
