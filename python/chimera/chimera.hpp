@@ -1,0 +1,9 @@
+#include <pr_tsr/block.hpp>
+#include <pr_tsr/block_bin.hpp>
+#include <pr_tsr/can.hpp>
+#include <pr_tsr/food_item.hpp>
+#include <pr_tsr/fuze.hpp>
+#include <pr_tsr/glass.hpp>
+#include <pr_tsr/plate.hpp>
+#include <pr_tsr/table.hpp>
+#include <pr_tsr/valve.hpp>
