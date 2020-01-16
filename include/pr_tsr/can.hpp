@@ -15,7 +15,7 @@ inline aikido::constraint::dart::TSR getDefaultCanTSR()
   tsr.mT0_w = Eigen::Isometry3d::Identity();
 
   // Transform between end effector and w
-  double can_height = 0.123;
+  double can_height = 0.235;
   double can_radius = 0.033;
   double push_distance = 0.05;
   Isometry3d Tw_e = tsr.mT0_w;
